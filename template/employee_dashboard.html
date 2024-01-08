@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    {%include 'header.html'%}
+    <div class="container mt-4">
+        <h1>Welcome to the Employee Dashboard, {{ user.first_name }}!</h1>
+
+        <!-- Displaying user details -->
+        <div class="card mb-4">
+            <div class="card-header">
+                User Details
+            </div>
+            <div class="card-body">
+                <!-- <p class="card-text">Employee Code: {{ user.employee.empc }}</p> -->
+                <p class="card-text"><b>Email:</b> {{ user.username }}</p>
+            </div>
+        </div>
+
+        <!-- Displaying leave details -->
+        <h2>Your Leave Details:</h2>
+
+        {% if leaves_data %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Leave ID</th>
+                            <th>Leave Type</th>
+                            <th>Description</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for leave in leaves_data %}
+                            <tr>
+                                <td>{{ leave.leave_id }}</td>
+                                <td>{{ leave.leave_type }}</td>
+                                <td>{{ leave.leave_description }}</td>
+                                <td>{{ leave.leave_from }}</td>
+                                <td>{{ leave.leave_to }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info" role="alert">
+                No leave data available.
+            </div>
+        {% endif %}
+
+
+    </div>
+
+    <!-- Bootstrap JS and other scripts -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

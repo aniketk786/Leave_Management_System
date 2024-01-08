@@ -1,0 +1,42 @@
+
+body{
+    background-color: gainsboro !important;
+}
+.conatainer{
+    align-self: center !important;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+
+.manager-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.manager-options label {
+    margin-right: 15px;
+}
+
+.register-button{
+    align-content: center;
+}
+.align-centre{
+    margin: 0 auto !important;
+    width: 50% !important;
+    position: absolute !important;
+    top: 50%;
+    width: 100%;
+    align-self: center !important;
+}
+.center{
+    text-align: center !important;
+}
+.main-div{
+    background-color: azure;
+    position: relative;
+    margin-top: 0% !important;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}

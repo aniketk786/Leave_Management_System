@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .btn-accept {
+            background-color: #28a745;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .btn-reject {
+            background-color: #dc3545;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="container mt-4">
+        <h1>Welcome to the Manager Dashboard, {{ user.first_name }}!</h1>
+
+        <!-- <p>Manager Code: {{ user.employee_details.empcode }}</p> -->
+        <div class="card mb-4">
+            <div class="card-header">
+                User Details
+            </div>
+            <div class="card-body">
+                <!-- <p class="card-text">Employee Code: {{ user.employee.empc }}</p> -->
+                <p class="card-text"><b>Email:</b> {{ user.username }}</p>
+            </div>
+        </div>
+
+        <h2>Employee Leave Details:</h2>
+
+        <!--Accept and Reject buttons -->
+        <div class="btn-group" role="group" aria-label="Actions">
+            <button type="button" class="btn-success btn-sm ml-3">Accept</button>
+            <button type="button" class="btn btn-danger btn-sm ml-2">Reject</button>
+        </div>
+
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
